@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          cq:inherit="{Boolean}true"
+          jcr:primaryType="cq:EditConfig">
+    <cq:inplaceEditing
+            jcr:primaryType="cq:InplaceEditingConfig"
+            active="{Boolean}true"
+            configPath="inplaceEditingConfig"
+            editorType="text">
+        <inplaceEditingConfig jcr:primaryType="nt:unstructured">
+            <!-- Keep your rtePlugins configurations if needed -->
+        </inplaceEditingConfig>
+    </cq:inplaceEditing>
+</jcr:root>

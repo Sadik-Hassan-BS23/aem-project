@@ -15,29 +15,26 @@
  */
 package com.adobe.aem.guides.wknd.core.models;
 
-import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
-
-import javax.annotation.PostConstruct;
-
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
-
+import javax.annotation.PostConstruct;
 import java.util.Optional;
+
+import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
 
 @Model(adaptables = Resource.class)
 public class HelloWorldModel {
 
-    @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
-    @Default(values="No resourceType")
+    @ValueMapValue(name = PROPERTY_RESOURCE_TYPE, injectionStrategy = InjectionStrategy.OPTIONAL)
+    @Default(values = "No resourceType")
     protected String resourceType;
 
     @SlingObject
@@ -49,14 +46,24 @@ public class HelloWorldModel {
 
     @PostConstruct
     protected void init() {
+        if (resourceResolver == null) {
+            message = "ResourceResolver is null!";
+            return;
+        }
+
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+        if (pageManager == null) {
+            message = "PageManager could not be adapted from ResourceResolver!";
+            return;
+        }
+
         String currentPagePath = Optional.ofNullable(pageManager)
                 .map(pm -> pm.getContainingPage(currentResource))
-                .map(Page::getPath).orElse("");
+                .map(Page::getPath).orElse("No current page found");
 
         message = "Hello World!\n"
-            + "Resource type is: " + resourceType + "\n"
-            + "Current page is:  " + currentPagePath + "\n";
+                + "Resource type is: " + resourceType + "\n"
+                + "Current page is:  " + currentPagePath + "\n";
     }
 
     public String getMessage() {
