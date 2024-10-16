@@ -1,0 +1,6 @@
+<sly data-sly-use.formModel="com.adobe.aem.guides.wknd.core.models.FormModel" />
+<form method="POST" action="${slingRequest.path}.submitForm.html">
+    <input type="text" name="name" value="${formModel.name}" placeholder="Enter your name" required />
+    <input type="number" name="age" value="${formModel.age}" placeholder="Enter your age" required />
+    <button type="submit">Submit</button>
+</form>
