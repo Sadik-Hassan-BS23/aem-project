@@ -1,9 +1,9 @@
 package com.adobe.aem.guides.wknd.core.models;
 
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 
 @Model(
         adaptables = Resource.class,
@@ -14,13 +14,13 @@ public class FormModel {
     private String name;
 
     @ValueMapValue
-    private String age;
+    private Integer age;
 
     public String getName() {
-        return name != null ? name : "";
+        return name;
     }
 
-    public String getAge() {
-        return age != null ? age : "";
+    public Integer getAge() {
+        return age;
     }
 }
