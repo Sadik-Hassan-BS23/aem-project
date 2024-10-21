@@ -23,5 +23,8 @@ public class Contact {
     private boolean isActive;
 
     @Inject
+    private String occupation;
+
+    @Inject
     private String comments;
 }
