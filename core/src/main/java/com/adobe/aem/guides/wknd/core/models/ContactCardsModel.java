@@ -21,7 +21,6 @@ public class ContactCardsModel {
 
     @Inject
     @Via("resource")
-    @Getter
     public List<Contact> contact;
 
 }

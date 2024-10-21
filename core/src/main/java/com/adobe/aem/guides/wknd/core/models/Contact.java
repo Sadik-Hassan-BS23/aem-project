@@ -18,4 +18,7 @@ public class Contact {
 
     @Inject
     private String contactEmail;
+
+    @Inject
+    private boolean isActive;
 }
