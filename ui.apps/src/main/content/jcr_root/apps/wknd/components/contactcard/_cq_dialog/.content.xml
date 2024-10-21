@@ -67,7 +67,73 @@
                                                 value="user"/>
                                     </items>
                                 </occupation>
-
+                                <country
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Country"
+                                        name="./country">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <us
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                text="US"
+                                                value="US"/>
+                                        <bangladesh
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                text="Bangladesh"
+                                                value="Bangladesh"/>
+                                        <others
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                text="Others"
+                                                value="Others"/>
+                                    </items>
+                                </country>
+                                <hobbies
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Hobbies"
+                                        name="./hobbies"
+                                        multiple="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <hobby1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Cricket"
+                                                text="Cricket"/>
+                                        <hobby2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Football"
+                                                text="Football"/>
+                                        <hobby3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Hockey"
+                                                text="Hockey"/>
+                                        <hobby4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Badminton"
+                                                text="Badminton"/>
+                                        <hobby5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Gardening"
+                                                text="Gardening"/>
+                                        <hobby6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Singing"
+                                                text="Singing"/>
+                                        <hobby7
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/option"
+                                                value="Others"
+                                                text="Others"/>
+                                    </items>
+                                </hobbies>
                             </items>
                         </contactGroup>
                     </items>

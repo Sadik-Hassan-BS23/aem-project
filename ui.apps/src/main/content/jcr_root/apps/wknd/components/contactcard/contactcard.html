@@ -1,20 +1,49 @@
-<div data-sly-test="${wcmmode.edit}"> Contact Card
+<div data-sly-test="${wcmmode.edit}" style="color: #4CAF50; font-weight: bold; text-align: center" >
+    Contact Card
 </div>
+
 <sly data-sly-use.contactObj="com.adobe.aem.guides.wknd.core.models.ContactCardsModel">
 
     <div class="g-row">
         <sly data-sly-list.item="${contactObj.contact}">
             <div class="g-col  g-palm-wide-and-up--1-2 g-desk--1-4  print-hidden">
-                <div class="info-box  ">
+                <div class="info-box"
+                     style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
                     <div class="info-box__body">
-                        <sly data-sly-test="${item.contactName}">Name - ${item.contactName @ context='html'}<br></sly>
-                        <sly data-sly-test="${item.contactEmail}">Email - <a
-                                href="mailto:${item.contactEmail @ context='html'}" x-cq-linkchecker="valid">${item.contactEmail
-                            @ context='html'}</a></sly>
-                        <div data-sly-test="${item.isActive}"> Is Active</div>
-                        <div data-sly-test="${item.comments}">Comments - ${item.comments @ context='html'}<br></div>
-                        <div data-sly-test="${item.occupation}">
-                            Occupation: ${item.occupation @ context='html'}<br>
+                        <sly data-sly-test="${item.contactName}">
+                            <span style="color: #FF5722;">Name: </span> -
+                            <span style="color: #000;">${item.contactName @ context='html'}</span><br>
+                        </sly>
+
+                        <sly data-sly-test="${item.contactEmail}">
+                            <span style="color: #22ffde;">Email: </span> -
+                            <a href="mailto:${item.contactEmail @ context='html'}" style="color: #3F51B5;"
+                               x-cq-linkchecker="valid">
+                                ${item.contactEmail @ context='html'}
+                            </a><br>
+                        </sly>
+
+                        <div data-sly-test="${item.isActive}" style="color: #4CAF50;">
+                            Is Active
+                        </div>
+
+                        <div data-sly-test="${item.comments}" style="color: #795548;">
+                            <span style="color: #FF5722;">Comments</span> -
+                            <span style="color: #000;">${item.comments @ context='html'}</span><br>
+                        </div>
+
+                        <div data-sly-test="${item.occupation}" style="color: #2196F3;">
+                            <span style="color: #FF5722;">Occupation</span>:
+                            <span style="color: #000;">${item.occupation @ context='html'}</span><br>
+                        </div>
+
+                        <div data-sly-test="${item.country}" style="color: #9c4b90;">
+                            <span style="color: #8c4f1c;">Country: </span>
+                            <span style="color: #000;">${item.country}</span><br>
+                        </div>
+                        <div data-sly-test="${item.hobbies}">
+                            <span style="color: #2261ff;">Hobbies: </span>
+                            <span style="color: #000;">${item.hobbies}</span><br>
                         </div>
                     </div>
                 </div>

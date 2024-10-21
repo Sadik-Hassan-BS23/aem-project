@@ -7,6 +7,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Setter
 @Getter
@@ -27,4 +28,10 @@ public class Contact {
 
     @Inject
     private String comments;
+
+    @Inject
+    private String country;
+
+    @Inject
+    private List<String> hobbies;
 }
