@@ -21,4 +21,7 @@ public class Contact {
 
     @Inject
     private boolean isActive;
+
+    @Inject
+    private String comments;
 }

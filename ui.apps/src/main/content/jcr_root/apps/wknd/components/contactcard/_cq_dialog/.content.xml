@@ -37,6 +37,21 @@
                                         value="{Boolean}true"
                                         uncheckedValue="{Boolean}false"
                                         name="./isActive"/>
+                                <comments
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldLabel="Comments"
+                                        height="3em"
+                                        name="./comments"
+                                        useFixedInlineToolbar="{Boolean}true"/>
+<!--                                    <rtePlugins-->
+<!--                                            jcr:primaryType="nt:unstructured"-->
+<!--                                            sling:resourceSuperType="myhost/global/options/rteplugin-config/rte-inline-editor/rtePlugins"/>-->
+<!--                                    <uiSettings-->
+<!--                                            jcr:primaryType="nt:unstructured"-->
+<!--                                            sling:resourceSuperType="myhost/global/options/rteplugin-config/rte-inline-editor/uiSettings"/>-->
+<!--                                </comments>-->
+
                             </items>
                         </contactGroup>
                     </items>
