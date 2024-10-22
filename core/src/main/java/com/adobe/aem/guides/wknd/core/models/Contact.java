@@ -34,4 +34,7 @@ public class Contact {
 
     @Inject
     private List<String> hobbies;
+
+    @Inject
+    private String selectedPath;
 }

@@ -45,6 +45,10 @@
                             <span style="color: #2261ff;">Hobbies: </span>
                             <span style="color: #000;">${item.hobbies}</span><br>
                         </div>
+                        <div data-sly-test="${item.selectedPath}">
+                            <a href="${item.selectedPath @ context='uri'}" target="_blank">Go to Selected Resource</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
