@@ -23,4 +23,8 @@ public class ContactCardsModel {
     @Via("resource")
     public List<Contact> contact;
 
+    @Inject
+    @Via("resource")
+    private String[] tags;
+
 }

@@ -6,6 +6,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.List;
 
@@ -37,4 +38,16 @@ public class Contact {
 
     @Inject
     private String selectedPath;
+
+    @PostConstruct
+    protected void init() {
+        if (selectedPath != null && !selectedPath.isEmpty()) {
+
+            if (!selectedPath.matches(".*\\.[a-zA-Z0-9]+$")) {
+
+                selectedPath = selectedPath.concat(".html");
+            }
+        }
+    }
+
 }

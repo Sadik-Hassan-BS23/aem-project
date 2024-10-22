@@ -48,6 +48,17 @@
                         <div data-sly-test="${item.selectedPath}">
                             <a href="${item.selectedPath @ context='uri'}" target="_blank">Go to Selected Resource</a>
                         </div>
+                        <div data-sly-test="${item.tags}">
+                            <div class="tag-list">
+                                <h3>Tags:</h3>
+                                <ul>
+                                    <sly data-sly-list.tag="${item.tags}">
+                                        <li>${tag @ context='html'}</li>
+                                    </sly>
+                                </ul>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>

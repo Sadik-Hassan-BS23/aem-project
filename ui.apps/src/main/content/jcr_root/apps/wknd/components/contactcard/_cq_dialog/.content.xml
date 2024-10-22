@@ -146,6 +146,12 @@
                                         name="./selectedPath"
                                         required="{Boolean}true"
                                         rootPath="/content"/>
+                                <tags
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                        fieldLabel="Tags"
+                                        multiple="{Boolean}true"
+                                        name="./tags"/>
                             </items>
                         </contactGroup>
                     </items>
