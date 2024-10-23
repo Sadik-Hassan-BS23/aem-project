@@ -1,0 +1,15 @@
+<sly data-sly-use.teaser="com.adobe.cq.wcm.core.components.models.Teaser"
+     data-sly-use.customTeaser="com.adobe.aem.guides.wknd.core.models.CustomTeaserModel">
+
+    <div class="custom-teaser-component">
+        <h2>${customTeaser.title @ context='html'}</h2>
+        <p>${customTeaser.description @ context='html'}</p>
+        <a href="${customTeaser.linkURL @ context='html'}">Read More</a>
+
+        <div class="custom-message">
+            ${customTeaser.customMessage @ context='html'}
+        </div>
+    </div>
+</sly>
+
+Hello
